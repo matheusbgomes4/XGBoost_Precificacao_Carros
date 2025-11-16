@@ -1,23 +1,57 @@
-# 🚗 Previsão de Preço de Veículos com XGBoost
+## 💡 Regressão • ML Pipeline Completo • Hiperparâmetros • Validação Cruzada
+# 📊 Objetivo
 
-Este projeto utiliza o algoritmo **XGBoost** para prever o **preço de veículos** com base em atributos como marca, modelo, ano de fabricação, quilometragem e outros dados relevantes. O projeto foi desenvolvido em Python com foco em aprendizado supervisionado de regressão.
+Criar um modelo de regressão para prever o preço de automóveis com base em atributos como motor, consumo, ano, estilo etc.
 
+# 📁 Pipeline
+1. Coleta e limpeza de dados
+
+10918 linhas → 10209 após remoção de duplicatas
+
+Tratamento de categorias
+
+Conversão de tipos
+
+Exploratory Data Analysis preliminar
 ---
+2. Modelagem
 
-## 📊 Sobre o Projeto
+Foram testadas:
 
-O objetivo é construir um modelo preditivo de preços de veículos, utilizando **técnicas de regressão** e **validação de desempenho** para garantir resultados confiáveis. Isso pode ser útil para concessionárias, plataformas de venda de veículos e análise de mercado automotivo.
+XGBRegressor (sklearn API)
 
+XGBoost nativo com DMatrix
+
+GridSearchCV para hiperparâmetros
+
+Validação cruzada (k=5)
+
+Early stopping
 ---
+3. Melhores resultados
 
-## 🧰 Tecnologias Utilizadas
+RMSE final: ~2912
 
-- Python 🐍
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
-- Scikit-learn
-- XGBoost
+Melhor configuração:
+
+max_depth=3
+
+colsample_bytree=0.6
+
+subsample=1
+
+learning_rate=0.3
+---
+4. Interpretabilidade
+
+Feature importance
+
+Gráficos de valores reais vs previstos
+---
+5. Uso do modelo
+
+Modelo salvo com joblib
+
+Exemplo de inferência com novos automóveis
 
 ---
